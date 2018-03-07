@@ -82,8 +82,7 @@ namespace Winlist
 
             if (result == null)
             {
-                throw new NullReferenceException
-                ("unable to locate the distinguishedName for the object " + objectName + " in the " + LdapDomain + " domain");
+                throw new NullReferenceException("unable to locate the distinguishedName for the object " + objectName + " in the " + LdapDomain + " domain");
             }
 
             DirectoryEntry directoryObject = result.GetDirectoryEntry();

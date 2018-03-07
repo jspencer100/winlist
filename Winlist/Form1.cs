@@ -29,11 +29,20 @@ namespace Winlist
             AD search = new AD();
             string strUserName = string.Empty;
             ArrayList arGroups = new ArrayList();
+            string strOutput = string.Empty;
+            tbOutput.Clear();
+
 
             strUserName = search.GetObjectDistinguishedName(AD.objectClass.user, AD.returnType.distinguishedName, tbUserName.Text, search.GetDomainString());
             arGroups = search.Groups(strUserName, true);
 
-            foreach()
+            foreach (string strGroup in arGroups)
+            {
+                strOutput += strGroup + ";\r \n";
+                
+            }
+
+            tbOutput.Text = strOutput;
 
         }
 
